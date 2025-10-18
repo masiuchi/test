@@ -11,6 +11,7 @@ jobs:
     runs-on: windows-latest
 
     strategy:
+      fail-fast: false
       matrix:
         perl:
           # - 'develop'
@@ -34,7 +35,7 @@ jobs:
           # - '5.8'
         distribution:
             - 'default'
-            # - 'strawberry'
+            - 'strawberry'
 
     name: Perl ${{ matrix.perl }} distribution:${{ matrix.distribution }}
     steps:
