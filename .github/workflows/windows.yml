@@ -34,7 +34,7 @@ jobs:
           # - '5.8'
         distribution:
             - 'default'
-            - 'strawberry'
+            # - 'strawberry'
 
     name: Perl ${{ matrix.perl }} distribution:${{ matrix.distribution }}
     steps:
