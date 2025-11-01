@@ -1,0 +1,27 @@
+name: Windows build (latest)
+
+on:
+  workflow_dispatch:
+  push:
+  pull_request:
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    strategy:
+      fail-fast: false
+
+    name: Windows build (latest)
+    steps:
+    - uses: actions/checkout@v4
+    - name: perl version
+      run: perl -V
+    - name: gcc version
+      run: gcc --version
+    - name: perl paths
+      run: Get-Command perl -All
+    - name: gcc paths
+      run: Get-Command gcc -All
+
